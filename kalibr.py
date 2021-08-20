@@ -12,7 +12,7 @@ def getArray(line):
     array_start = line.find('[') + 1
     return np.asarray([float(e.strip('[]')) for e in line[array_start:].split(', ')])
 
-def stereofromKalibr(camchain_file_name, imu_file_name):
+def stereoFromKalibr(camchain_file_name, imu_file_name):
   # Camera parameters
   camchain_file = open(camchain_file_name, 'r')
   camchain_file_lines = camchain_file.readlines()

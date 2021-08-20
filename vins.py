@@ -1,13 +1,14 @@
-def toVINSStereo(cam0_file, cam1_file, stereo_file,
+def toVINSStereo(path,
+                 cam0_file, cam1_file, stereo_file,
                  cam0_params, cam1_params, imu_params):
   # Camera 0 file
-  writeCameraPinholeFile(cam0_file, cam0_params)
+  writeCameraPinholeFile(path + cam0_file, cam0_params)
 
   # Camera 1 file
-  writeCameraPinholeFile(cam1_file, cam1_params)
+  writeCameraPinholeFile(path + cam1_file, cam1_params)
 
   # Stereo Config file
-  writeStereoConfigFile(stereo_file, cam0_file, cam1_file, cam0_params, cam1_params, imu_params)
+  writeStereoConfigFile(path + stereo_file, cam0_file, cam1_file, cam0_params, cam1_params, imu_params)
 
 def writeCameraPinholeFile(file_name, camera_parameters):
     file = open(file_name, 'w')
